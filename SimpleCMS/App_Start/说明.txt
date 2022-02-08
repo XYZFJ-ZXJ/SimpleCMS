@@ -1,0 +1,1 @@
+IdentityConfig.cs和Startup.Auth.cs是从别的地方导入的.
