@@ -1,6 +1,7 @@
 $app-name:  dynamic( 'SimpleCMS' );
 $image-search-path: 'E:/SimpleCMS/SimpleCMS/Sencha/build/production/SimpleCMS/resources';
 $theme-name:  dynamic( 'theme-triton' );
+$include-cfg: dynamic(true);;
 $include-ext-abstractcomponent: dynamic(true);;
 $include-ext-abstractcontainer: dynamic(true);;
 $include-ext-abstractmanager: dynamic(true);;
@@ -621,6 +622,7 @@ $include-ext-locale-zh_cn-toolbar-paging: dynamic(true);;
 $include-ext-locale-zh_cn-view-abstractview: dynamic(true);;
 $include-ext-locale-zh_cn-view-view: dynamic(true);;
 $include-ext-locale-zh_cn-window-messagebox: dynamic(true);;
+$include-ext-locale-zh_cn-window-window: dynamic(true);;
 $include-ext-menu-bar: dynamic(true);;
 $include-ext-menu-checkitem: dynamic(true);;
 $include-ext-menu-colorpicker: dynamic(true);;
@@ -1004,12 +1006,24 @@ $include-ext-view-view: dynamic(true);;
 $include-ext-window-messagebox: dynamic(true);;
 $include-ext-window-toast: dynamic(true);;
 $include-ext-window-window: dynamic(true);;
+$include-i18n: dynamic(true);;
+$include-overrides-util-sorter: dynamic(true);;
+$include-state: dynamic(true);;
 $include-simplecms-application: dynamic(true);;
+$include-simplecms-locale-locale: dynamic(true);;
+$include-simplecms-locale-zh_cn: dynamic(true);;
 $include-simplecms-store-personnel: dynamic(true);;
+$include-simplecms-util-config: dynamic(true);;
+$include-simplecms-util-state: dynamic(true);;
+$include-simplecms-util-toast: dynamic(true);;
+$include-simplecms-util-url: dynamic(true);;
+$include-simplecms-ux-form-field-vtypes: dynamic(true);;
 $include-simplecms-view-main-list: dynamic(true);;
 $include-simplecms-view-main-main: dynamic(true);;
 $include-simplecms-view-main-maincontroller: dynamic(true);;
 $include-simplecms-view-main-mainmodel: dynamic(true);;
+$include-toast: dynamic(true);;
+$include-uri: dynamic(true);;
 
 
 /* ======================== ETC ======================== */

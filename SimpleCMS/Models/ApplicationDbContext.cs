@@ -37,5 +37,7 @@ namespace SimpleCMS.Models
         public DbSet<Media> Mediae { get; set; }
         //62
         public DbSet<Tag> Tags { get; set; }
+        //88页B处加入
+        public DbSet<UserProfile> UserProfiles { get; set; }
     }
 }

@@ -63,7 +63,7 @@ Ext.define("Ext.locale.zh_CN.form.field.Base", {
 // changing the msg text below will affect the LoadMask
 Ext.define("Ext.locale.zh_CN.view.AbstractView", {
     override: "Ext.view.AbstractView",
-    loadingText: "讀取中..."
+    loadingText: "读取中..."
 });
 
 Ext.define("Ext.locale.zh_CN.picker.Date", {
@@ -271,4 +271,10 @@ Ext.define("Ext.locale.zh_CN.window.MessageBox", {
 // This is needed until we can refactor all of the locales into individual files
 Ext.define("Ext.locale.zh_CN.Component", {	
     override: "Ext.Component"
+});
+
+//77页添加的对本文件的修改
+Ext.define("Ext.locale.zh_CN.window.Window", {
+    override: "Ext.window.Window",
+    closeToolText: '关闭窗口'
 });
