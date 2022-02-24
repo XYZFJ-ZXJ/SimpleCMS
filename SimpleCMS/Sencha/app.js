@@ -6,6 +6,7 @@
 //requires配置项使用的类，除了最后一个，Overrides是在78A添加的,必须在SimpleCMS.view.main.Main前,
 // 'SimpleCMS.locale.Locale','SimpleCMS.locale.zh_CN','SimpleCMS.ux.*',是60页添加的内容. 'SimpleCMS.util.Config'是81页B添加的内容
 // 'SimpleCMS.util.Url'是81页底部加入的内容. 'SimpleCMS.util.State'是90页添加的.'SimpleCMS.util.Toast'是91页添加的.
+//'SimpleCMS.util.Failed'是100页添加的
 Ext.application({
     name: 'SimpleCMS',
 
@@ -18,6 +19,7 @@ Ext.application({
         'SimpleCMS.util.Config',
         'SimpleCMS.util.Url',
         'SimpleCMS.util.State',
+        'SimpleCMS.util.Failed',
         'SimpleCMS.util.Toast',
         'SimpleCMS.ux.*',
         'SimpleCMS.view.main.Main'

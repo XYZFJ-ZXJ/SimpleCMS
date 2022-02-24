@@ -176,9 +176,11 @@
     <Content Include="Sencha\app\locale\Locale.js" />
     <Content Include="Sencha\app\store\Personnel.js" />
     <Content Include="Sencha\app\util\Config.js" />
+    <Content Include="Sencha\app\util\Failed.js" />
     <Content Include="Sencha\app\util\State.js" />
     <Content Include="Sencha\app\util\Toast.js" />
     <Content Include="Sencha\app\util\Url.js" />
+    <Content Include="Sencha\app\ux\data\proxy\Format.js" />
     <Content Include="Sencha\app\ux\form\field\VType.js" />
     <Content Include="Sencha\app\view\main\List.js" />
     <Content Include="Sencha\app\view\main\Main.js" />
