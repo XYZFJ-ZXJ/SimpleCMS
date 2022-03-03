@@ -1,0 +1,2 @@
+本文件夹是116页顶部创建的文件夹
+lock-screen-background.jpg和error-page-background.jpg是118页中间从SDK中复制过来的

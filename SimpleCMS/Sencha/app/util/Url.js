@@ -1,5 +1,6 @@
 ﻿//81页加入的内容
 //14-29行为82-84页添加的内容,34-52行为84-85页加入的内容,里面的get方法调用的是本文件前面的方法
+//DEBUG: true属性及本类的后面部分是116页中间加入的内容
 Ext.define('SimpleCMS.util.Url', {
     alternateClassName: 'URI',
     singleton: true,
@@ -49,6 +50,17 @@ Ext.define('SimpleCMS.util.Url', {
             }
         }
         return result;
+    },
+
+    DEBUG: true,
+
+    resources: {
+        logo: 'resources/images/company-logo.png'
+    },
+
+    getResource: function (res) {
+        var me = this;
+        return ROOTPATH + (me.DEBUG ? '/sencha/' : '/') + me.resources[res];
     }
 
 });

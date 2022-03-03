@@ -13,6 +13,8 @@ Ext.define('SimpleCMS.util.Failed', {
             Ext.Msg.alert(title, I18N.Failed404);
         } else if (response.status === 500) {
             Ext.Msg.alert(title, I18N.Failed500);
+            //120页使用的方式，本项目并没有采用
+            //window.location.hash='page500';
         } else if (!Ext.isEmpty(response.responseText)) {
             Ext.Msg.alert(title, Ext.String.format(I18N.FailedOtherCode, response.status, response.responseText));
         }
