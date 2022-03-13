@@ -11,7 +11,8 @@ Ext.define('SimpleCMS.view.main.Main', {
         'SimpleCMS.view.main.MainModel',
         'SimpleCMS.view.main.MainContainerWrap',
         'SimpleCMS.view.authentication.*',
-        'SimpleCMS.view.pages.*'
+        'SimpleCMS.view.pages.*',
+        'SimpleCMS.view.article.Main' //137页添加
     ],
 
     controller: 'main',
@@ -31,28 +32,41 @@ Ext.define('SimpleCMS.view.main.Main', {
 
     items: [
         {
-            xtype: 'toolbar',
+            xtype: 'toolbar',   //顶部工具栏，115页底部进行了修改
             cls: 'sencha-dash-dash-headerbar shadow',
             height: 64,
             itemId: 'headerBar',
             items: [
                 {
-                    xtype: 'component',
+                    xtype: 'component',  //logo图标
                     reference: 'senchaLogo',
                     cls: 'sencha-logo',
                     html: '<div class="main-logo"><img src="' + URI.getResource('logo') + '">' + I18N.AppTitle + '</div>',
                     width: 250
                 },
                 {
-                    margin: '0 0 0 8',
+                    margin: '0 0 0 8',  //中间的空白组件
                     ui: 'header',
                     iconCls:'x-fa fa-navicon',
                     id: 'main-navigation-btn',
                     handler: 'onToggleNavigationSize'
                 },
-                '->',       
+                '->', 
                 {
-                    xtype: 'tbtext',
+                    iconCls: 'x-fa fa-key',   //139页添加的用户密码修改按钮
+                    ui: 'header',
+                    tooltip: I18N.PasswordResetTitle,
+                    href: '#passwordreset',  //实际上就是Extjs路由，见137页上部
+                    hrefTarget: '_self'
+                },
+                {
+                    ui: 'header',                  //138页添加的退出按钮
+                    iconCls: 'x-fa fa-power-off',
+                    handler: 'onLogout',
+                    tooltip: I18N.Logout
+                },
+                {
+                    xtype: 'tbtext',        //用户名展示
                     bind: { text: '{UserName}' },
                     cls: 'top-user-name'
                 }

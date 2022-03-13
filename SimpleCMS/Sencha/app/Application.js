@@ -4,7 +4,7 @@
  * initialization details.
  */
 
-//launch: function()是78页填充的内容，onAppUpdate方法在93页中间进行了修改，require配置项也是此处加入的
+//onAppUpdate方法在93页中间进行了修改，require配置项也是此处加入的
 //'NavigationTree'导航树数据集的应用是115页底部加入的,指向store/NavigationTree.js文件.
 Ext.define('SimpleCMS.Application', {
     extend: 'Ext.app.Application',
@@ -20,7 +20,7 @@ Ext.define('SimpleCMS.Application', {
         'NavigationTree'
     ],
     
-    launch: function () {
+    launch: function () {   //launch: function()是78页填充的内容
         // TODO - Launch the application
         Ext.util.Format.defaultValue = function (value, defaultValue) {
             return Ext.isEmpty(value) ? defaultValue : value;

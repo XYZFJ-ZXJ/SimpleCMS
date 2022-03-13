@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 
-//71页顶部添加的文件,是一个网上下载的辅助类,用于辅助读取web.config文件appSettings内的配置
+//71页顶部添加的文件(此时被IdentityConfig.cs使用),是一个网上下载的辅助类,用于辅助读取web.config文件appSettings内的配置
 namespace SimpleCMS.Helper
 {
     public static class AppSettings

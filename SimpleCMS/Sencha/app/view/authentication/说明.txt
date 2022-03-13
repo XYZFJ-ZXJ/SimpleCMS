@@ -1,0 +1,4 @@
+是118页从SDK迁移过来的文件夹和文件，与Identity登录和权限控制有关的东西都需要在这里面的文件配置（用得最多
+的AuthenticationController.js）。这里面甚至还提供了login.js登录视图和PasswordReset.js登录用户重置用户密码视图。
+需要说明的是：logout登出功能不需要配置在本文件夹的AuthenticationController.js内，因为本文件夹不存在登出视图实际
+也没有也不需要登出视图这种东西.

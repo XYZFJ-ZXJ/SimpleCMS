@@ -1,4 +1,4 @@
-﻿//91页创建的文件
+﻿//91页创建的文件,重写Extjs的信息提示组件
 Ext.define('SimpleCMS.util.Toast', {
     alternateClassName: 'TOAST',
     singleton: true,

@@ -9,6 +9,8 @@ using System.Web;
 namespace SimpleCMS.Models
 {
     //87页创建的该文件
+    //本文件是视图状态管理的后端的其中一个部分,还要与后端的Controller下的StateController.cs控制器文件，
+    //前端的Sencha/app/utilState.js结合使用才能达到总的视图状态管理的功能
     [Table("T_UserProfile")]
     public class UserProfile
     {

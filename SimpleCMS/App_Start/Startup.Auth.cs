@@ -14,16 +14,18 @@ namespace SimpleCMS
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
-            // 配置数据库上下文、用户管理器和登录管理器，以便为每个请求使用单个实例
+            // 配置数据库上下文(54页ApplicationDbContext中定义)、用户管理器和登录管理器(69页的IdentityConfig.cs中定义
+            //)，以便为每个请求使用单个实例
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
-            //70页，其中的一个示例
+            //70页添加 ，注册角色管理对象
             app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create);
 
             // 使应用程序可以使用 Cookie 来存储已登录用户的信息
             // 并使用 Cookie 来临时存储有关使用第三方登录提供程序登录的用户的信息
             // 配置登录 Cookie
+            //LoginPath修改为指向主页,getUserIdCallback修改为返回整形的Id,修改Cookie保存验证信息的时间长度为30分钟
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
@@ -42,6 +44,7 @@ namespace SimpleCMS
 
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
+            //下面的部分与双因子验证有关，本项目并未用到，无需修改.
             // 使应用程序可以在双重身份验证过程中验证第二因素时暂时存储用户信息。
             app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
 

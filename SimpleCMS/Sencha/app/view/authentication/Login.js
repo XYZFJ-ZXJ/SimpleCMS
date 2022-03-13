@@ -1,4 +1,4 @@
-//120页底部对该文件进行了修改
+//120页底部对该文件进行了修改，125页C进行了修改，image项是126页添加的
 Ext.define('SimpleCMS.view.authentication.Login', {
     extend: 'SimpleCMS.view.authentication.LockingWindow',
     xtype: 'login',
@@ -67,6 +67,37 @@ Ext.define('SimpleCMS.view.authentication.Login', {
                     }
                 },
                 {
+                    xtype: 'textfield',
+                    cls: 'auth-textbox',
+                    name: 'VerifyCode',
+                    height: 55,
+                    hideLabel: true,
+                    allowBlank: false,
+                    maxLength: 6,
+                    minLength: 6,
+
+                    emptyText: I18N.VerifyCode,
+                    triggers: {
+                        glyphed: {
+                            cls: 'trigger-glyph-noop auth-verifycode-trigger'
+                        }
+                    }
+                },
+                {
+                    xtype: 'image', //126页底部添加，使用图片组件来显示验证码
+                    height: 55,
+                    src: '',
+                    title: I18N.VerifyCodeAlt,      //为127页新添加的内容,实现验证码图片的单击刷新功能 
+                    alt: I18N.VerifyCodeAlt,
+                    style: 'cursor:pointer',
+                    listeners: {
+                        click: {
+                            fn: 'onRefrestVcode',//调用的AuthenticationController.js方法
+                            element: 'el'
+                        }
+                    }
+                },
+                {
                     xtype: 'container',
                     layout: 'hbox',
                     items: [
@@ -90,7 +121,7 @@ Ext.define('SimpleCMS.view.authentication.Login', {
                     text: I18N.LoginTitle,
                     formBind: true,
                     listeners: {
-                        click: 'onLoginButton'
+                        click: 'onLoginButton'  //定义在authenticationcontroller.js内
                     }
                 }
             ]
@@ -100,5 +131,9 @@ Ext.define('SimpleCMS.view.authentication.Login', {
     initComponent: function() {
         this.addCls('user-login-register-container');
         this.callParent(arguments);
+    },
+
+    listeners: {     //show事件是127页上部添加的，实现每次进入登录视图都能刷新验证码
+        show: 'onLoginViewShow'
     }
 });

@@ -1,5 +1,6 @@
 ﻿//85底部添加的文件,onStateChange部分是86页添加的部分.URI.get()方法调用的是自定义的类'SimpleCMS.util.Url'(5.8.10节)内的方法
 //loaded变量和restore()方法体的添加位于89页底
+//本文件是视图状态管理的前端部分，要和后端的Controller下的StateController.cs控制器文件和model下的UserProfile.cs实体文件结合使用才能达到总的视图状态管理的功能
 Ext.define('SimpleCMS.util.State', {
     alternateClassName: 'STATE',
     singleton: true,
@@ -15,7 +16,7 @@ Ext.define('SimpleCMS.util.State', {
 
     loaded: false,
 
-    constructor: function (config) {
+    constructor: function (config) {  //选择暂时的本地存储器并启动状态管理器
         var me = this,
             provider = Ext.util.LocalStorage.supported ? new Ext.state.LocalStorageProvider() : new Ext.state.CookieProvider();
         me.initConfig(config);
@@ -24,7 +25,7 @@ Ext.define('SimpleCMS.util.State', {
         provider.on('statechange', me.onStateChange, me);
     },
 
-    onStateChange: function (provider, key, value) {
+    onStateChange: function (provider, key, value) { //提交视图状态到服务端
         var me = this;
         if (!me.loaded) return;
         if (value) {
@@ -35,7 +36,7 @@ Ext.define('SimpleCMS.util.State', {
         }
     },
 
-    restore: function () {
+    restore: function () {    //从服务端获取视图状态
         var me = this;
         Ext.Ajax.request({
             async: false,

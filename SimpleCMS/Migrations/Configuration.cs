@@ -1,6 +1,9 @@
 using Microsoft.AspNet.Identity;
 using SimpleCMS.Models;
 
+//本文件是EF框架Code First模式启动数据迁移自动生成的文件<相当于EF框架的配置文件>，可以在里面对迁移做一些配置和调整，
+//还有设置数据库自增，添加触发器,进一步完善表，一些实体的初始化(一版Ientity验证所需的实体比如用户实体，角色实体)，配置自动迁移等操作.
+//*******本文件最终被67页底部的ASP.NET的全局应用程序类Global.asax使用
 namespace SimpleCMS.Migrations
 {
     using System;
@@ -138,13 +141,15 @@ namespace SimpleCMS.Migrations
             }
             context.SaveChanges();
 
-            //67页加入的内容
+
+            //67页加入的内容,Roles是Identity自动创建的类
             context.Roles.AddOrUpdate(p => p.Name,
                new ApplicationRole() { Name = "系统管理员" },
                new ApplicationRole() { Name = "编辑" },
                new ApplicationRole() { Name = "注册用户" }
            );
 
+            //67页加入的内容,UserManager是Identity库提供的类
             var userManager = new UserManager<ApplicationUser, int>(
                 new ApplicationUserStore(context)
                 );

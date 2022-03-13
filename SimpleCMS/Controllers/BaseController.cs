@@ -12,6 +12,7 @@ namespace SimpleCMS.Controllers
     //71页底和72页添加的内容
     public class BaseController : Controller
     {
+        //C#变量，用在下面的C#属性里面
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
@@ -29,6 +30,7 @@ namespace SimpleCMS.Controllers
             DbContext = dbContext;
         }
 
+        //C#属性，在里面使用了上面定义的变量
         public ApplicationSignInManager SignInManager
         {
             get
@@ -74,6 +76,16 @@ namespace SimpleCMS.Controllers
             private set
             {
                 _dbContext = value;
+            }
+        }
+
+        //133页底部加入的属性，被AccountController等类使用，代表当前用户
+        public ApplicationUser CurrentUser
+        {
+            get
+            {
+                var currentUser = UserManager.FindByName(User.Identity.Name);
+                return currentUser;
             }
         }
 

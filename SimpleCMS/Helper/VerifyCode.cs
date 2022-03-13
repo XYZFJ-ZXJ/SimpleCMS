@@ -6,6 +6,7 @@ using System.Drawing;
 
 namespace SimpleCMS.Helper
 {
+    //125页需要的类，从网上下载的，产生验证码图片的功能函数.
     public class VerifyCode
     {
         #region 验证码长度(默认6个验证码的长度)
@@ -121,7 +122,7 @@ namespace SimpleCMS.Helper
             var imageWidth = (int)(code.Length * fWidth) + 4 + Padding * 2;
             var imageHeight = fSize * 2 + Padding;
 
-           var image = new System.Drawing.Bitmap(imageWidth, imageHeight);
+            var image = new System.Drawing.Bitmap(imageWidth, imageHeight);
 
             var g = Graphics.FromImage(image);
 

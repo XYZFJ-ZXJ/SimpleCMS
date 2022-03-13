@@ -1,4 +1,4 @@
-Ext.define('SimpleCMS.view.main.MainContainerWrap', {
+Ext.define('SimpleCMS.view.main.MainContainerWrap', { //为Main.js中的主容器，即mian下vbox布局的下面部分，即整个视区的主要部分(除了上边的工具栏)
     extend: 'Ext.container.Container',
     xtype: 'maincontainerwrap',
 
