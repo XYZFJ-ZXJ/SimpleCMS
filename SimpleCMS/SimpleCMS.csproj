@@ -174,6 +174,8 @@
     <Content Include="Sencha\app\Application.js" />
     <Content Include="Sencha\app\locale\ZH_CN.js" />
     <Content Include="Sencha\app\locale\Locale.js" />
+    <Content Include="Sencha\app\model\Base.js" />
+    <Content Include="Sencha\app\model\User.js" />
     <Content Include="Sencha\app\store\NavigationTree.js" />
     <Content Include="Sencha\app\util\Config.js" />
     <Content Include="Sencha\app\util\Failed.js" />
@@ -198,6 +200,9 @@
     <Content Include="Sencha\app\view\pages\Error404Window.js" />
     <Content Include="Sencha\app\view\pages\Error500Window.js" />
     <Content Include="Sencha\app\view\pages\ErrorBase.js" />
+    <Content Include="Sencha\app\view\user\Main.js" />
+    <Content Include="Sencha\app\view\user\MainController.js" />
+    <Content Include="Sencha\app\view\user\MainModel.js" />
     <Content Include="Sencha\bootstrap.css" />
     <Content Include="Sencha\bootstrap.js" />
     <Content Include="Sencha\build.xml" />
@@ -8267,6 +8272,7 @@
     <Content Include="Sencha\sass\src\view\authentication\Dialog.scss" />
     <Content Include="Sencha\sass\src\view\authentication\LockingWindow.scss" />
     <Content Include="Sencha\sass\var\view\authentication\Dialog.scss" />
+    <Content Include="Sencha\sass\src\view\user\Main.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -8276,6 +8282,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Sencha\app\ux\container\" />
     <Folder Include="Sencha\build\production\SimpleCMS\archive\" />
     <Folder Include="Sencha\build\production\SimpleCMS\deltas\" />
     <Folder Include="Sencha\packages\" />

@@ -8,6 +8,7 @@ using SimpleCMS.LocalResources;
 using System.Linq.Dynamic;
 
 //98页创建的类,用于在服务器端统一输出接口和实体状态ModelState对象内的信息保存到JObject对象（是Json.NET内提供的类）
+//扩展代理，前端统一输入/输入接口用的是Sencha/app/ux/Format.js文件（JSON接口），接口定义一致，前后端就可以数据交流了
 namespace SimpleCMS.Helper
 {
     public class ExtJs
